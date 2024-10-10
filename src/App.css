@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* containers moving up and down animation
+ */
+@keyframes moveUp {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-40px); /* Move up */
+	}
+	100% {
+		transform: translateY(0); /* Return to original position */
+	}
+}
+
+@keyframes moveDown {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(40px); /* Move down */
+	}
+	100% {
+		transform: translateY(0); /* Return to original position */
+	}
+}
+
+.move-up {
+	animation: moveUp 3s ease-in-out infinite; /* Continuous up and down motion */
+}
+
+.move-down {
+	animation: moveDown 3s ease-in-out infinite; /* Continuous down and up motion */
+}
