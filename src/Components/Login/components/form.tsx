@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../../Redux/Reducers";
+import { login } from "../../../Redux/Actions/login";
 
 const LoginForm = () => {
 	const {
@@ -8,8 +11,14 @@ const LoginForm = () => {
 		formState: { errors },
 	} = useForm();
 
+	const dispatch = useDispatch();
+
 	function submitLoginForm(data: any) {
-		console.log(data);
+		const body = {
+			email: data?.email,
+			password: data?.password,
+		};
+		dispatch(login(body) as any);
 	}
 
 	return (

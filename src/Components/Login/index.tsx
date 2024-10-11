@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import LoginForm from "./components/form";
+import { useSelector } from "react-redux";
+import { RootState } from "../../Redux/Reducers";
 
 const Login: React.FC = () => {
+	const LoginDetails = useSelector((state: RootState) => state.login);
 	const [colors, setColors] = useState<string[]>([
 		"#1afff7", // initial colors for the boxes
 		"#0047fa",
@@ -39,7 +42,12 @@ const Login: React.FC = () => {
 	return (
 		<React.Fragment>
 			<div className="w-full min-h-[40vh] flex">
-				<div className="bg-black p-10 w-1/2">
+				<div
+					className={`bg-black p-10 ${
+						LoginDetails.token || localStorage.getItem("asp-portfolio-token")
+							? "w-full transition-all duration-1000"
+							: "w-1/2"
+					}`}>
 					<div
 						className="rounded-lg p-10 mb-10 transition-colors duration-1000"
 						style={{ backgroundColor: colors[0] }} // Apply random color
@@ -56,7 +64,7 @@ const Login: React.FC = () => {
 						))}
 					</div>
 				</div>
-				<div className="w-1/2 h-full">
+				<div className={` ${LoginDetails?.token ? "hidden" : "w-1/2 h-full"}`}>
 					<LoginForm />
 				</div>
 			</div>
