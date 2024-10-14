@@ -1,4 +1,4 @@
-import { LOGIN_START, LOGIN_SUCCESS, LOGIN_FAILURE } from "./Types";
+import { LOGIN_START, LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT } from "./Types";
 import { Api } from "../Api/Api";
 
 export const login =
@@ -21,3 +21,9 @@ export const login =
 			});
 		}
 	};
+
+export const logout = () => (dispatch: any) => {
+	dispatch({
+		type: LOGOUT,
+	});
+};

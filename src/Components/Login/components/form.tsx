@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../Redux/Reducers";
 import { login } from "../../../Redux/Actions/login";
+import { RootState } from "../../../Redux/Reducers";
+import { useNavigate } from "react-router-dom";
+import { showToast } from "../../../Utils/show-toast";
+import { Icons } from "../../../Utils/icons";
 
 const LoginForm = () => {
 	const {
 		handleSubmit,
 		register,
 		formState: { errors },
+		reset,
 	} = useForm();
 
+	const navigate = useNavigate();
 	const dispatch = useDispatch();
+	const LoginDetails = useSelector((state: RootState) => state.login);
 
 	function submitLoginForm(data: any) {
 		const body = {
@@ -20,6 +26,16 @@ const LoginForm = () => {
 		};
 		dispatch(login(body) as any);
 	}
+
+	useEffect(() => {
+		if (LoginDetails?.token || localStorage.getItem("token")) {
+			reset();
+			showToast("Login Successful", "success");
+		}
+		if (LoginDetails?.error) {
+			showToast("Login Failed", LoginDetails?.error.toString());
+		}
+	}, [LoginDetails, navigate]);
 
 	return (
 		<React.Fragment>
@@ -88,14 +104,17 @@ const LoginForm = () => {
 					</div>
 
 					<button
+						disabled={LoginDetails?.loading}
 						type="submit"
-						className="bg-blue-600 border-none h-[45px] hover:bg-blue-800 rounded-lg w-full">
-						Login
+						className="bg-blue-600 border-none h-[45px] hover:bg-blue-800 disabled:bg-blue-500 disabled:cursor-wait rounded-lg w-full flex items-center justify-center space-x-6">
+						<span className="text-white font-bold text-14px">Login</span>
+						{LoginDetails?.loading && (
+							<Icons.Spinner className="animate-spin h-8 w-8 text-white" />
+						)}
 					</button>
 				</form>
 			</div>
 		</React.Fragment>
 	);
 };
-
 export default LoginForm;

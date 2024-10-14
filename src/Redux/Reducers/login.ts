@@ -1,4 +1,9 @@
-import { LOGIN_START, LOGIN_SUCCESS, LOGIN_FAILURE } from "../Actions/Types";
+import {
+	LOGIN_START,
+	LOGIN_SUCCESS,
+	LOGIN_FAILURE,
+	LOGOUT,
+} from "../Actions/Types";
 
 const initialState = {
 	token: localStorage.getItem("asp-portfolio-token"),
@@ -36,6 +41,14 @@ export default function loginReducer(
 				...state,
 				loading: false,
 				error: action.payload,
+			};
+		case LOGOUT:
+			localStorage.removeItem("asp-portfolio-token");
+			localStorage.removeItem("asp-portfolio-user");
+			return {
+				...state,
+				token: null,
+				user: null,
 			};
 		default:
 			return state;

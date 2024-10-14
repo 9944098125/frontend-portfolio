@@ -8,18 +8,22 @@ import Projects from "./Components/Projects";
 import Resume from "./Components/Resume";
 import Skills from "./Components/Skills";
 import store from "./Redux/Store/Store";
+import { Toaster } from "react-hot-toast";
 
 function App() {
 	return (
 		<div className="App">
 			<Provider store={store}>
-				<Navbar />
-				<BasicDetails />
-				<Resume />
-				<Projects />
-				<Skills />
-				<Experience />
-				<Login />
+				<div className="pt-[5rem]">
+					<Navbar />
+					<BasicDetails />
+					<Resume />
+					<Projects />
+					<Skills />
+					<Experience />
+					<Login />
+				</div>
+				<Toaster position="bottom-right" />
 			</Provider>
 		</div>
 	);
