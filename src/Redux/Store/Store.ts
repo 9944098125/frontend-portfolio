@@ -1,6 +1,6 @@
 import { legacy_createStore as createStore, applyMiddleware } from "redux";
 import { thunk } from "redux-thunk";
-import rootReducer from "../Reducers";
+import rootReducer, { RootState } from "../Reducers";
 import SetAuthToken from "../../Utils/SetAuthToken";
 
 // Define the type for the middleware array

@@ -35,3 +35,21 @@
 .move-down {
 	animation: moveDown 3s ease-in-out infinite; /* Continuous down and up motion */
 }
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes erasing {
+	from {
+		width: 100%;
+	}
+	to {
+		width: 0;
+	}
+}

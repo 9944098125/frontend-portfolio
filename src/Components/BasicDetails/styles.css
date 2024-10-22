@@ -1,0 +1,73 @@
+.typing-animation {
+	font-weight: 800;
+	overflow: hidden;
+	border-right: 2px solid #fff; /* Adjust the border color */
+	white-space: nowrap;
+	animation: typing 1s steps(20), erasing 1s steps(20) 2s; /* Adjust the animation duration and steps */
+}
+
+@media screen and (max-width: 768px) {
+	.typing-animation {
+		font-size: 15px;
+	}
+}
+
+section {
+	box-sizing: border-box;
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	overflow: hidden;
+}
+
+section span {
+	display: block;
+	transform: translateX(-100px);
+	opacity: 0;
+}
+
+.container {
+	perspective: 800px;
+	width: 100%;
+	height: 40vh;
+}
+
+.cube {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	transform-style: preserve-3d;
+}
+
+.side {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: red;
+	opacity: 0.6;
+}
+
+.front {
+	transform: rotateY(0deg) translateZ(100px);
+	background-color: #ee4444;
+}
+.right {
+	transform: rotateY(90deg) translateZ(100px);
+	background-color: #ffcc00;
+}
+.back {
+	transform: rotateY(180deg) translateZ(100px);
+	background-color: #ff0055;
+}
+.left {
+	transform: rotateY(-90deg) translateZ(100px);
+	background-color: #8855ff;
+}
+.top {
+	transform: rotateX(90deg) translateZ(100px);
+	background-color: #0099ff;
+}
+.bottom {
+	transform: rotateX(-90deg) translateZ(100px);
+	background-color: #22cc88;
+}

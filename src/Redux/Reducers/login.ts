@@ -1,8 +1,16 @@
 import {
+	ADD_USER_DETAILS_FAILURE,
+	ADD_USER_DETAILS_START,
+	GET_USER_DETAILS_FAILURE,
+	GET_USER_DETAILS_START,
+	GET_USER_DETAILS_SUCCESS,
+} from "./../Actions/Types";
+import {
 	LOGIN_START,
 	LOGIN_SUCCESS,
 	LOGIN_FAILURE,
 	LOGOUT,
+	ADD_USER_DETAILS_SUCCESS,
 } from "../Actions/Types";
 
 const initialState = {
@@ -10,6 +18,7 @@ const initialState = {
 	loading: false,
 	error: null,
 	user: null,
+	userDetailsAdded: false,
 };
 
 export default function loginReducer(
@@ -42,9 +51,46 @@ export default function loginReducer(
 				loading: false,
 				error: action.payload,
 			};
+		case ADD_USER_DETAILS_START:
+			return {
+				...state,
+				loading: true,
+				userDetailsAdded: false,
+			};
+		case ADD_USER_DETAILS_SUCCESS:
+			return {
+				...state,
+				loading: false,
+				user: action.payload.user,
+				error: null,
+				userDetailsAdded: true,
+			};
+		case ADD_USER_DETAILS_FAILURE:
+			return {
+				...state,
+				loading: false,
+				error: action.payload,
+				userDetailsAdded: false,
+			};
+		case GET_USER_DETAILS_START:
+			return {
+				...state,
+				loading: true,
+			};
+		case GET_USER_DETAILS_SUCCESS:
+			return {
+				...state,
+				loading: false,
+				user: action.payload?.user,
+			};
+		case GET_USER_DETAILS_FAILURE:
+			return {
+				...state,
+				loading: false,
+				error: action.payload,
+			};
 		case LOGOUT:
 			localStorage.removeItem("asp-portfolio-token");
-			localStorage.removeItem("asp-portfolio-user");
 			return {
 				...state,
 				token: null,
