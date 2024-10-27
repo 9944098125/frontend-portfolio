@@ -23,7 +23,7 @@ const Navbar = () => {
 
 	return (
 		<React.Fragment>
-			<nav className="w-full h-[70px] bg-white shadow-lg fixed top-0 left-0 right-0 shadow-blue-100 flex items-center justify-between">
+			<nav className="w-full h-[70px] bg-blue-800 shadow-lg fixed top-0 left-0 right-0 shadow-blue-100 flex items-center justify-between">
 				{LoginDetails.token && showConfirmationModal && (
 					<ConfirmationModal
 						showConfirmationModal={showConfirmationModal}
@@ -40,7 +40,7 @@ const Navbar = () => {
 						width={80}
 						style={{ borderRadius: "50%" }}
 					/>
-					<h4 className="text-2xl font-bold text-blue-600">Portfolio</h4>
+					<h4 className="text-2xl font-bold text-white">Portfolio</h4>
 				</div>
 				<div className="flex items-center space-x-10 px-10">
 					<HashLink
@@ -48,40 +48,40 @@ const Navbar = () => {
 							el.scrollIntoView({ behavior: "auto", block: "end" })
 						}
 						to="#home">
-						<p className="text-blue-700 font-bold">Home</p>
+						<p className="text-white font-bold">Home</p>
 					</HashLink>
 					<HashLink
 						scroll={(el) =>
 							el.scrollIntoView({ behavior: "auto", block: "end" })
 						}
 						to="#resume">
-						<p className="text-blue-700 font-bold">Resume</p>
+						<p className="text-white font-bold">Resume</p>
 					</HashLink>
 					<HashLink
 						scroll={(el) =>
 							el.scrollIntoView({ behavior: "auto", block: "end" })
 						}
 						to="#projects">
-						<p className="text-blue-700 font-bold">Projects</p>
+						<p className="text-white font-bold">Projects</p>
 					</HashLink>
 					<HashLink
 						scroll={(el) =>
 							el.scrollIntoView({ behavior: "auto", block: "end" })
 						}
 						to="#skills">
-						<p className="text-blue-700 font-bold">Skills</p>
+						<p className="text-white font-bold">Skills</p>
 					</HashLink>
 					<HashLink
 						scroll={(el) =>
 							el.scrollIntoView({ behavior: "auto", block: "end" })
 						}
 						to="#experience">
-						<p className="text-blue-700 font-bold">Experience</p>
+						<p className="text-white font-bold">Experience</p>
 					</HashLink>
 					{(LoginDetails?.token || Token) && (
 						<button
 							onClick={() => setShowConfirmationModal(true)}
-							className="bg-blue-600 hover:bg-blue-800 text-white px-6 py-2 rounded-md border-none">
+							className="bg-red-600 hover:bg-blue-800 text-white px-6 py-2 rounded-md border-none">
 							Logout
 						</button>
 					)}
