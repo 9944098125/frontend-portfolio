@@ -21,7 +21,9 @@ export interface RootState {
 			occupation: string;
 			summary: string;
 			image: string;
+			resume: string;
 		};
+		resume: File | null;
 	};
 }
 

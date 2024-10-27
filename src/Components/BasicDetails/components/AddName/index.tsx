@@ -12,6 +12,9 @@ const AddName = (props: Props) => {
 	return (
 		<React.Fragment>
 			<div className="p-5">
+				<h1 className="text-2xl text-blue-600 font-bold underline mb-5">
+					Basic Details
+				</h1>
 				<UserForm
 					changeImage={changeImage}
 					imageUploadLoading={imageUploadLoading}

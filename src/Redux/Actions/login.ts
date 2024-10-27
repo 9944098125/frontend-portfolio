@@ -8,6 +8,8 @@ import {
 	ADD_USER_DETAILS_FAILURE,
 	GET_USER_DETAILS_START,
 	GET_USER_DETAILS_SUCCESS,
+	ADD_RESUME_START,
+	ADD_RESUME_SUCCESS,
 } from "./Types";
 import { Api } from "../Api/Api";
 import { User } from "../../Interfaces";
@@ -55,6 +57,28 @@ export const addUser =
 			if (res) {
 				dispatch({
 					type: ADD_USER_DETAILS_SUCCESS,
+					payload: res?.data,
+				});
+			}
+		} catch (err: any) {
+			dispatch({
+				type: ADD_USER_DETAILS_FAILURE,
+				payload: err?.response?.data?.message,
+			});
+		}
+	};
+
+export const uploadResume =
+	(userId: string, body: { resume: string }) =>
+	async (dispatch: AppDispatch) => {
+		try {
+			dispatch({
+				type: ADD_RESUME_START,
+			});
+			const res = await Api.post(`/user/upload-resume?userId=${userId}`, body);
+			if (res) {
+				dispatch({
+					type: ADD_RESUME_SUCCESS,
 					payload: res?.data,
 				});
 			}

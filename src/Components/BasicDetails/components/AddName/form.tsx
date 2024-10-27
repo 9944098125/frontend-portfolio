@@ -80,12 +80,12 @@ const UserForm = (props: Props) => {
 				</div>
 
 				<div className="p-2 mb-5">
-					<label htmlFor="email" className="font-bold text-blue-800">
+					<label htmlFor="emailInForm" className="font-bold text-blue-800">
 						Email Address
 					</label>
 					<input
-						type="text"
-						id="email"
+						type="email"
+						id="emailInForm"
 						{...form.register("email", { required: true })}
 						placeholder="Enter Your Email Address"
 						className="w-full h-[45px] bg-white border-none outline-none px-2 rounded-lg"
@@ -141,16 +141,20 @@ const UserForm = (props: Props) => {
 									style={{ display: "none" }}
 									id="image"
 								/>
-								<img
-									src={
-										image
-											? image
-											: UserDetails?.user?.image ||
-											  "https://www.w3schools.com/howto/img_avatar.png"
-									}
-									alt=""
-									className="rounded-full h-[100px] w-[100px]"
-								/>
+								{imageUploadLoading ? (
+									<Icons.Spinner className="animate-spin h-8 w-8" />
+								) : (
+									<img
+										src={
+											image
+												? image
+												: UserDetails?.user?.image ||
+												  "https://www.w3schools.com/howto/img_avatar.png"
+										}
+										alt=""
+										className="rounded-full h-[100px] w-[100px]"
+									/>
+								)}
 							</div>
 						</label>
 					</div>

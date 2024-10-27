@@ -1,4 +1,7 @@
 import {
+	ADD_RESUME_FAILURE,
+	ADD_RESUME_START,
+	ADD_RESUME_SUCCESS,
 	ADD_USER_DETAILS_FAILURE,
 	ADD_USER_DETAILS_START,
 	GET_USER_DETAILS_FAILURE,
@@ -84,6 +87,23 @@ export default function loginReducer(
 				user: action.payload?.user,
 			};
 		case GET_USER_DETAILS_FAILURE:
+			return {
+				...state,
+				loading: false,
+				error: action.payload,
+			};
+		case ADD_RESUME_START:
+			return {
+				...state,
+				loading: true,
+			};
+		case ADD_RESUME_SUCCESS:
+			return {
+				...state,
+				loading: false,
+				user: action.payload.user,
+			};
+		case ADD_RESUME_FAILURE:
 			return {
 				...state,
 				loading: false,
