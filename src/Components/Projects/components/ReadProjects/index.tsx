@@ -1,40 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
+import { RootState } from "../../../../Redux/Reducers";
+import { getProjects } from "../../../../Redux/Actions/projects";
 
-const dummyData = [
-	{
-		_id: "1",
-		title: "Emoji Game",
-		description: "This is a game regarding the emojis",
-		images: [
-			"https://res.cloudinary.com/dakda5ni3/image/upload/v1706020914/arnu6eiserg0mz3jhjjq.png",
-			"https://res.cloudinary.com/dakda5ni3/image/upload/v1705652480/nw8wexzixu3wpyoltkvs.jpg",
-		],
-		liveLink: "https://asp8.ccbp.tech",
-		githubLink: "https://github.com/9944098125",
-		techStack: ["React", "Bootstrap", "HTML", "CSS"],
-	},
-	{
-		_id: "1",
-		title: "Emoji Game",
-		description: "This is a game regarding the emojis",
-		images: [
-			"https://res.cloudinary.com/dakda5ni3/image/upload/v1706020914/arnu6eiserg0mz3jhjjq.png",
-			"https://res.cloudinary.com/dakda5ni3/image/upload/v1705652480/nw8wexzixu3wpyoltkvs.jpg",
-		],
-		liveLink: "https://asp8.ccbp.tech",
-		githubLink: "https://github.com/9944098125",
-		techStack: ["React", "Bootstrap", "HTML", "CSS"],
-	},
-];
 const ReadProjects = () => {
+	const dispatch = useDispatch();
+	const Projects = useSelector((state: RootState) => state.projects);
+
+	useEffect(() => {
+		dispatch(getProjects() as any);
+	}, [Projects?.projectsCountChanged]);
 	return (
 		<React.Fragment>
 			<div className="p-6 flex flex-wrap items-center justify-center space-x-8">
-				{dummyData.map((item, idx) => (
-					<div className="w-96 h-96 bg-white rounded-lg shadow-lg flex flex-col items-center justify-center">
+				{Projects?.projects?.map((item, idx) => (
+					<div className="w-96 min-h-96 mb-5 bg-white rounded-lg shadow-lg flex flex-col items-center justify-center">
 						<Carousel
 							interval={4000}
 							transitionTime={1000}
