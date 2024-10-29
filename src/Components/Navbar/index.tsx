@@ -23,7 +23,7 @@ const Navbar = () => {
 
 	return (
 		<React.Fragment>
-			<nav className="w-full h-[70px] bg-blue-800 shadow-lg fixed top-0 left-0 right-0 shadow-blue-100 flex items-center justify-between">
+			<nav className="w-full h-[70px] z-[199] bg-blue-800 shadow-lg fixed top-0 left-0 right-0 shadow-blue-100 flex items-center justify-between">
 				{LoginDetails.token && showConfirmationModal && (
 					<ConfirmationModal
 						showConfirmationModal={showConfirmationModal}

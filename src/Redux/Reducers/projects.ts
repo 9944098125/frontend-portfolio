@@ -5,6 +5,12 @@ import {
 	GET_PROJECTS_START,
 	GET_PROJECTS_SUCCESS,
 	GET_PROJECTS_FAILURE,
+	UPDATE_PROJECT_START,
+	UPDATE_PROJECT_SUCCESS,
+	UPDATE_PROJECT_FAILURE,
+	DELETE_PROJECT_START,
+	DELETE_PROJECT_SUCCESS,
+	DELETE_PROJECT_FAILURE,
 } from "../Actions/Types";
 
 const initialState = {
@@ -49,6 +55,42 @@ export default function projects(state = initialState, action: any) {
 				projects: action.payload.projects,
 			};
 		case GET_PROJECTS_FAILURE:
+			return {
+				...state,
+				loading: false,
+				error: action.payload,
+			};
+		case UPDATE_PROJECT_START:
+			return {
+				...state,
+				loading: true,
+				projectsCountChanged: false,
+			};
+		case UPDATE_PROJECT_SUCCESS:
+			return {
+				...state,
+				loading: false,
+				projectsCountChanged: true,
+			};
+		case UPDATE_PROJECT_FAILURE:
+			return {
+				...state,
+				loading: false,
+				error: action.payload,
+			};
+		case DELETE_PROJECT_START:
+			return {
+				...state,
+				loading: true,
+				projectsCountChanged: false,
+			};
+		case DELETE_PROJECT_SUCCESS:
+			return {
+				...state,
+				loading: false,
+				projectsCountChanged: true,
+			};
+		case DELETE_PROJECT_FAILURE:
 			return {
 				...state,
 				loading: false,

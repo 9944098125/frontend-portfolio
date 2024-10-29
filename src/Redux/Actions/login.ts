@@ -90,23 +90,22 @@ export const uploadResume =
 		}
 	};
 
-export const getUserDetails =
-	(userId: string) => async (dispatch: AppDispatch) => {
-		try {
+export const getUserDetails = () => async (dispatch: AppDispatch) => {
+	try {
+		dispatch({
+			type: GET_USER_DETAILS_START,
+		});
+		const res = await Api.get(`/user/getUserDetails`);
+		if (res) {
 			dispatch({
-				type: GET_USER_DETAILS_START,
-			});
-			const res = await Api.get(`/user/getUserDetails?userId=${userId}`);
-			if (res) {
-				dispatch({
-					type: GET_USER_DETAILS_SUCCESS,
-					payload: res?.data,
-				});
-			}
-		} catch (err: any) {
-			dispatch({
-				type: ADD_USER_DETAILS_FAILURE,
-				payload: err?.response?.data?.message,
+				type: GET_USER_DETAILS_SUCCESS,
+				payload: res?.data,
 			});
 		}
-	};
+	} catch (err: any) {
+		dispatch({
+			type: ADD_USER_DETAILS_FAILURE,
+			payload: err?.response?.data?.message,
+		});
+	}
+};
