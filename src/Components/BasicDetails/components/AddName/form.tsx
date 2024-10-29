@@ -38,7 +38,7 @@ const UserForm = (props: Props) => {
 	};
 
 	useEffect(() => {
-		dispatch(getUserDetails(user?._id) as any);
+		dispatch(getUserDetails() as any);
 	}, [dispatch, user?._id, UserDetails?.userDetailsAdded]);
 
 	useEffect(() => {
