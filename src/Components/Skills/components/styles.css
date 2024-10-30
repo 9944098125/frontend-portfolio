@@ -1,0 +1,69 @@
+.skill-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 1px solid #ccc;
+	padding: 20px;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.skill-logo-container {
+	position: relative;
+	width: 15rem; /* Adjusted width to accommodate 10px border */
+	height: 15rem; /* Adjusted height to accommodate 10px border */
+	margin-bottom: 10px;
+	border-radius: 50%;
+	overflow: hidden;
+	transform: rotate(180deg); /* Rotate container to start fill from bottom */
+}
+
+/* Inner circle (logo) with spacing for the 10px border */
+.skill-logo {
+	width: 100%; /* Reduced to leave 10px for the border */
+	height: 100%; /* Reduced to leave 10px for the border */
+	border-radius: 50%;
+	object-fit: cover;
+	position: absolute;
+	top: 10px; /* Centered with 10px gap */
+	left: 10px; /* Centered with 10px gap */
+}
+
+/* Partially filled borders */
+.skill-border-beginner::after,
+.skill-border-intermediate::after,
+.skill-border-advanced::after,
+.skill-border-professional::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background: conic-gradient(
+		from 180deg,
+		/* Start gradient from 180 degrees */ red 0% 25%,
+		/* Beginner: 25% */ blue 0% 50%,
+		/* Intermediate: 50% */ green 0% 75%,
+		/* Advanced: 75% */ gold 0% 100% /* Professional: 100% */
+	);
+	mask-image: radial-gradient(circle, transparent 58%, black 58%);
+}
+
+/* Adjusting each level's color */
+.skill-border-beginner::after {
+	background: conic-gradient(from 180deg, red 0% 25%, transparent 25%);
+}
+
+.skill-border-intermediate::after {
+	background: conic-gradient(from 180deg, blue 0% 50%, transparent 50%);
+}
+
+.skill-border-advanced::after {
+	background: conic-gradient(from 180deg, green 0% 75%, transparent 75%);
+}
+
+.skill-border-professional::after {
+	background: conic-gradient(from 180deg, gold 0% 100%, transparent 100%);
+}

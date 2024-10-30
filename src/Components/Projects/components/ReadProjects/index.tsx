@@ -7,6 +7,7 @@ import { RootState } from "../../../../Redux/Reducers";
 import { getProjects } from "../../../../Redux/Actions/projects";
 import ProjectItem from "../ProjectItem";
 import { Projects } from "../../../../Interfaces";
+import { Icons } from "../../../../Utils/icons";
 
 const ReadProjects = () => {
 	const dispatch = useDispatch();
@@ -18,9 +19,15 @@ const ReadProjects = () => {
 	return (
 		<React.Fragment>
 			<div className="p-6 flex flex-wrap items-center justify-center space-x-8">
-				{Projects?.projects?.map((item: any, idx: number) => (
-					<ProjectItem key={idx} item={item} idx={idx} />
-				))}
+				{Projects?.projects ? (
+					Projects.projects.map((item: any, idx: number) => (
+						<ProjectItem key={idx} item={item} idx={idx} />
+					))
+				) : (
+					<div className="flex items-center justify-center w-full">
+						<Icons.Spinner className="animate-spin h-20 w-20 text-blue-600" />
+					</div>
+				)}
 			</div>
 		</React.Fragment>
 	);
