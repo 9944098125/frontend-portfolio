@@ -3,10 +3,14 @@ import { combineReducers, UnknownAction } from "redux";
 import loginReducer from "./login";
 import projects from "./projects";
 import { ThunkDispatch } from "redux-thunk";
+import skills from "./skills";
+import experiences from "./experience";
 
 export default combineReducers({
 	login: loginReducer,
 	projects: projects,
+	skills: skills,
+	experiences: experiences,
 });
 
 export interface RootState {
