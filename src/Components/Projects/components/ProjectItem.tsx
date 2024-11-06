@@ -14,7 +14,7 @@ type Props = {
 		images: string[];
 		liveLink: string;
 		githubLink: string;
-		technologies: string[];
+		techStack: string[];
 		createdAt: string;
 		updatedAt: string;
 		__v: number;

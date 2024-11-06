@@ -15,7 +15,7 @@ type Props = {
 		images: string[];
 		liveLink: string;
 		githubLink: string;
-		technologies: string[];
+		techStack: string[];
 		createdAt: string;
 		updatedAt: string;
 		__v: number;
@@ -99,6 +99,13 @@ const ProjectItemModal = (props: Props) => {
 							}}>
 							{item.description}
 						</p>
+						<p className="text-blue-600 font-bold">
+							<span className="text-gray-500 font-normal">Tech Stack: </span>
+							{item?.techStack
+								?.map((tech) => tech.charAt(0).toUpperCase() + tech.slice(1))
+								.join(", ")}
+						</p>
+
 						<div className="flex items-center space-x-2">
 							<Link
 								to={item.liveLink}

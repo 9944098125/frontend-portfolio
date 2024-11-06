@@ -97,15 +97,15 @@ const AddProjectsForm = ({ showAddForm, setShowAddForm }: any) => {
 	const animatedComponents = makeAnimated();
 
 	const options = [
-		{ value: "react", label: "ReactJS" },
-		{ value: "node", label: "NodeJS" },
+		{ value: "reactJs", label: "ReactJS" },
+		{ value: "nodeJs", label: "NodeJS" },
 		{ value: "react native", label: "React Native" },
 		{ value: "bootstrap", label: "Bootstrap" },
 		{ value: "tailwind", label: "TailwindCSS" },
 		{ value: "mui", label: "MUI" },
 		{ value: "kotlin", label: "Kotlin" },
 		{ value: "mongoDb", label: "MongoDB" },
-		{ value: "express", label: "ExpressJS" },
+		{ value: "expressJs", label: "ExpressJS" },
 	];
 
 	const handleChangeTechStack = (
