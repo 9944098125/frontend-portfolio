@@ -26,6 +26,7 @@ export default function skills(state = initialState, action: any) {
 			return {
 				...state,
 				loading: true,
+				skillCountChanged: false,
 			};
 		case ADD_SKILL_SUCCESS:
 			return {
@@ -78,6 +79,7 @@ export default function skills(state = initialState, action: any) {
 			return {
 				...state,
 				loading: true,
+				skillCountChanged: false,
 			};
 		case DELETE_SKILL_SUCCESS:
 			return {

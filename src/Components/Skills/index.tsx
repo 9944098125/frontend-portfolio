@@ -12,7 +12,7 @@ const Skills = () => {
 
 	return (
 		<React.Fragment>
-			<div id="skills" className="min-h-screen w-full p-5">
+			<div id="skills" className="w-full p-5">
 				<h1 className="text-2xl text-blue-600 font-bold underline mb-5">
 					Skills
 				</h1>

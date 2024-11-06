@@ -38,9 +38,6 @@ export const createSkill =
 
 export const readSkills = () => async (dispatch: AppDispatch) => {
 	try {
-		dispatch({
-			type: GET_SKILL_SUCCESS,
-		});
 		const res = await Api.get("/skills");
 		if (res) {
 			dispatch({
@@ -51,7 +48,7 @@ export const readSkills = () => async (dispatch: AppDispatch) => {
 	} catch (err: any) {
 		dispatch({
 			type: GET_SKILL_FAILURE,
-			payload: err.response.data?.message,
+			payload: err.response?.data?.message,
 		});
 	}
 };
@@ -61,7 +58,7 @@ export const updateSkills =
 			dispatch({
 				type: UPDATE_SKILL_START,
 			});
-			const res = await Api.put(`/skills/${userId}`, body);
+			const res = await Api.patch(`/skills/${userId}`, body);
 			if (res) {
 				dispatch({
 					type: UPDATE_SKILL_SUCCESS,
