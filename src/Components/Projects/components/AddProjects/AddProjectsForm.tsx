@@ -106,6 +106,9 @@ const AddProjectsForm = ({ showAddForm, setShowAddForm }: any) => {
 		{ value: "kotlin", label: "Kotlin" },
 		{ value: "mongoDb", label: "MongoDB" },
 		{ value: "expressJs", label: "ExpressJS" },
+		{ value: "nextJs", label: "NextJS" },
+		{ value: "redux core", label: "Redux Core" },
+		{ value: "redux toolkit query", label: "Redux Toolkit Query" },
 	];
 
 	const handleChangeTechStack = (

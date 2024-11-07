@@ -60,7 +60,7 @@ export const updateExperience =
 			dispatch({
 				type: UPDATE_EXPERIENCE_START,
 			});
-			const res = await Api.put(`/experiences/${experienceId}`, body);
+			const res = await Api.patch(`/experiences/${experienceId}`, body);
 			if (res) {
 				dispatch({
 					type: UPDATE_EXPERIENCE_SUCCESS,

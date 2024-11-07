@@ -67,6 +67,22 @@ export interface RootState {
 		success: boolean;
 		skillCountChanged: boolean;
 	};
+	experiences: {
+		loading: boolean;
+		error: string;
+		success: boolean;
+		experiences: {
+			_id: string;
+			company: string;
+			role: string;
+			startDate: Date;
+			endDate: Date;
+			experienceSummary: string;
+			technologiesWorkedOn: string[];
+			responsibilities: string;
+		}[];
+		experiencesCountChanged: boolean;
+	};
 }
 
 export type AppDispatch = ThunkDispatch<RootState, void, UnknownAction>;
