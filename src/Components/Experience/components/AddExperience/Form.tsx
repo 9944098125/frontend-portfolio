@@ -105,9 +105,9 @@ const AddExperienceForm = (props: Props) => {
 		{ value: "nextJs", label: "NextJS" },
 		{ value: "redux core", label: "Redux Core" },
 		{ value: "redux toolkit query", label: "Redux Toolkit Query" },
-		{value:"onrender", label:"OnRender"},
-		{value:"Hostinger". label:"Hostinger"},
-		{value:"railway", label:"Railway"}
+		{ value: "onrender", label: "OnRender" },
+		{ value: "Hostinger", label: "Hostinger" },
+		{ value: "railway", label: "Railway" },
 	];
 
 	useEffect(() => {
