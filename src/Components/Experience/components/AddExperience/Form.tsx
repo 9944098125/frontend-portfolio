@@ -119,8 +119,8 @@ const AddExperienceForm = (props: Props) => {
 			form.setValue("role", selectedExperience?.role);
 			form.setValue("summary", selectedExperience?.experienceSummary);
 			form.setValue("responsibilities", selectedExperience?.responsibilities);
-			setStartDate(new Date(selectedExperience?.startDate));
-			setEndDate(new Date(selectedExperience?.endDate));
+			setStartDate(selectedExperience?.startDate);
+			setEndDate(selectedExperience?.endDate);
 			setTechStack(selectedExperience?.technologiesWorkedOn);
 		}
 	}, [showForm?._id]);
