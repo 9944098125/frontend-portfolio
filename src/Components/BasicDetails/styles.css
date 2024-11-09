@@ -71,3 +71,18 @@ section span {
 	transform: rotateX(-90deg) translateZ(100px);
 	background-color: #22cc88;
 }
+@keyframes pulseImage {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.animate-pulse-image {
+	animation: pulseImage 2s infinite ease-in-out;
+}

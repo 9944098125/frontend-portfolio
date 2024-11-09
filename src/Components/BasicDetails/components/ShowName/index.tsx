@@ -23,7 +23,7 @@ const ShowName = () => {
 	return (
 		<React.Fragment>
 			<div className="p-10 flex justify-between">
-				<div className="w-1/2">
+				<div className="">
 					<div className="p-10 h-[12rem]">
 						<div className="mb-10 font-bold">
 							<h1 className="text-2xl text-blue-700">Hello folks, I'm </h1>
@@ -39,22 +39,11 @@ const ShowName = () => {
 							)}
 						</div>
 					</div>
-					<Details summary={UserDetails?.user?.summary} />
+					<Details
+						image={UserDetails?.user?.image}
+						summary={UserDetails?.user?.summary}
+					/>
 					<Animation />
-				</div>
-				{/* image container */}
-				<div className="w-1/2 flex items-center justify-center">
-					<div className="border-4 border-blue-500 p-2 rounded-full">
-						{UserDetails?.user ? (
-							<img
-								src={UserDetails?.user?.image}
-								alt=""
-								className="w-[25rem] h-[25rem] rounded-full"
-							/>
-						) : (
-							<Icons.Spinner className="text-blue-600 h-10 w-10 animate-spin" />
-						)}
-					</div>
 				</div>
 			</div>
 		</React.Fragment>
