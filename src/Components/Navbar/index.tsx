@@ -33,13 +33,7 @@ const Navbar = () => {
 				)}
 				{/* logo-container */}
 				<div className="w-[100px] flex items-center space-x-5 cursor-pointer">
-					<img
-						src="/asp-logo.png"
-						alt=""
-						height={60}
-						width={80}
-						style={{ borderRadius: "50%" }}
-					/>
+					<img src="/asp-logo.png" alt="" height={30} width={30} />
 					<h4 className="text-2xl font-bold text-white">Portfolio</h4>
 				</div>
 				<div className="flex items-center space-x-10 px-10">
