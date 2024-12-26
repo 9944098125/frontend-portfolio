@@ -34,7 +34,7 @@ const Navbar = () => {
 				{/* logo-container */}
 				<div className="w-[100px] flex items-center space-x-5 px-5 cursor-pointer">
 					<img
-						src="/logo.jpg"
+						src="/asp.png"
 						alt=""
 						height={50}
 						width={50}
