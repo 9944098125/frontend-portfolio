@@ -98,20 +98,24 @@ const ProjectItemModal = (props: Props) => {
 						</p>
 
 						<div className="flex items-center space-x-2">
-							<Link
-								to={item.liveLink}
+							<a
+								target="_blank"
+								rel="noopener noreferrer"
+								href={item.liveLink}
 								style={{ textDecoration: "none", color: "inherit" }}>
 								<div className="border border-black rounded-full p-5">
 									<FaExternalLinkAlt size={15} />
 								</div>
-							</Link>
-							<Link
-								to={item.githubLink}
+							</a>
+							<a
+								target="_blank"
+								rel="noopener noreferrer"
+								href={item.githubLink}
 								style={{ textDecoration: "none", color: "inherit" }}>
 								<div className="border border-black rounded-full p-5">
 									<FaGithub size={15} />
 								</div>
-							</Link>
+							</a>
 							{UserDetails?.token && (
 								<div
 									onClick={() =>
