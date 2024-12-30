@@ -26,7 +26,7 @@ const ShowName = () => {
 				<div className="">
 					<div className="p-10 h-[12rem]">
 						<div className="mb-10 font-bold">
-							<h1 className="text-2xl text-blue-700">Hey Dude, I'm </h1>
+							<h1 className="text-2xl text-blue-700">Namaste !, I'm </h1>
 							{UserDetails?.user ? (
 								<TypingAnimation
 									name={UserDetails.user?.name}
