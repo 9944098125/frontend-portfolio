@@ -87,18 +87,9 @@ const ProjectItemModal = (props: Props) => {
 						))}
 					</Carousel>
 
-					<div className="w-full p-4">
+					<div className="w-full p-4 h-[200px] overflow-y-scroll">
 						<h2 className="text-xl font-bold mb-2">{item.title}</h2>
-						<p
-							className="text-gray-700 mb-4"
-							style={{
-								display: "-webkit-box",
-								WebkitBoxOrient: "vertical",
-								WebkitLineClamp: 4,
-								overflow: "hidden",
-							}}>
-							{item.description}
-						</p>
+						<p className="text-gray-700 mb-4">{item.description}</p>
 						<p className="text-blue-600 font-bold">
 							<span className="text-gray-500 font-normal">Tech Stack: </span>
 							{item?.techStack
