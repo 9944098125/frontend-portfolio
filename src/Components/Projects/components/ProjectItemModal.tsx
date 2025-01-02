@@ -35,7 +35,7 @@ const ProjectItemModal = (props: Props) => {
 	const closeModal = () => setIsModalOpen(false);
 
 	return (
-		<div>
+		<React.Fragment>
 			{/* Button or Trigger to open modal */}
 			<button
 				onClick={openModal}
@@ -130,7 +130,7 @@ const ProjectItemModal = (props: Props) => {
 					</div>
 				</div>
 			</Modal>
-		</div>
+		</React.Fragment>
 	);
 };
 export default ProjectItemModal;

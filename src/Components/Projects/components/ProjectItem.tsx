@@ -76,7 +76,7 @@ const ProjectItem = (props: Props) => {
 						}}>
 						{item.description}
 					</p>
-					<div className="flex items-center space-x-2">
+					<div className="">
 						{UserDetails?.token && (
 							<div
 								onClick={() =>
