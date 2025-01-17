@@ -24,7 +24,7 @@ type Props = {
 		_id: string;
 	};
 	setShowForm?: any;
-	idx:number;
+	idx?:number;
 };
 const SkillCard = (props: Props) => {
 	const dispatch = useDispatch();
