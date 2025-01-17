@@ -28,7 +28,7 @@ type Props = {
 };
 const SkillCard = (props: Props) => {
 	const dispatch = useDispatch();
-	const { skill, showForm, setShowForm } = props;
+	const { skill, showForm, setShowForm, idx } = props;
 	// Access the level class dynamically
 	const levelClass =
 		levelClasses[skill.level as keyof typeof levelClasses] || "";
