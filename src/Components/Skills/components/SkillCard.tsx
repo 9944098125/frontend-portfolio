@@ -44,7 +44,7 @@ const SkillCard = (props: Props) => {
 	};
 
 	return (
-		<div className={`skill-card ${idx % 2 === 0 ? 'animate-oneWay1':'animate-onWay2'}`}>
+		<div className={`skill-card ${idx ? ${idx % 2 === 0 ? 'animate-oneWay1':'animate-onWay2'} : '`}>
 			<div className={`skill-logo-container ${levelClass}`}>
 				<img
 					src={skill.image}
