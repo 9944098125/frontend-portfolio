@@ -24,6 +24,7 @@ type Props = {
 		_id: string;
 	};
 	setShowForm?: any;
+	idx:number;
 };
 const SkillCard = (props: Props) => {
 	const dispatch = useDispatch();
@@ -43,7 +44,7 @@ const SkillCard = (props: Props) => {
 	};
 
 	return (
-		<div className="skill-card">
+		<div className={`skill-card ${idx % 2 === 0 ? 'animate-oneWay1':'animate-onWay2'}`}>
 			<div className={`skill-logo-container ${levelClass}`}>
 				<img
 					src={skill.image}
