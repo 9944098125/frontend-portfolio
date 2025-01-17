@@ -12,7 +12,7 @@ const ReadSkills = () => {
 				{SkillsState?.skills ? (
 					SkillsState?.skills?.map((skill: any, idx:number) => {
 						return (
-							<div className={`mt-5 ${idx % 2 === 0 ? 'animate-oneWay1':'animate-onWay2'}`} key={skill?._id}>
+							<div className="mb-5 key={skill?._id}>
 								<SkillCard skill={skill} />
 							</div>
 						);
