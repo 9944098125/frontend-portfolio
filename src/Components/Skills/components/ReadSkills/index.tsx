@@ -10,9 +10,9 @@ const ReadSkills = () => {
 		<React.Fragment>
 			<div className="border-green-500 rounded-lg border p-5 flex flex-wrap justify-center items-center">
 				{SkillsState?.skills ? (
-					SkillsState?.skills?.map((skill: any, idx:number) => {
+					SkillsState?.skills?.map((skill: any, idx: number) => {
 						return (
-							<div className="mb-5 key={skill?._id}>
+							<div className="mb-5" key={skill?._id}>
 								<SkillCard skill={skill} idx={idx} />
 							</div>
 						);

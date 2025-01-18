@@ -73,9 +73,9 @@
 		transform: translateY(10px);
 	}
 }
-.animate-oneWay1 {
+.animate-skills1 {
 	animation: animateSideways1 2s ease-in-out infinite;
 }
-.animate-oneWay2 {
+.animate-skills2 {
 	animation: animateSideways2 2s ease-in-out infinite;
 }
