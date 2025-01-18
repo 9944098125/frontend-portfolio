@@ -2,6 +2,7 @@ import React from "react";
 import "./styles.css";
 import { useDispatch } from "react-redux";
 import { deleteSkill } from "../../../Redux/Actions/skills";
+import { FaEdit, FaTrash } from "react-icons/fa";
 
 // Define the level classes as a separate object
 const levelClasses = {
@@ -45,8 +46,12 @@ const SkillCard = (props: Props) => {
 
 	return (
 		<div
-			className={`skill-card ${
-				idx && idx % 2 === 0 ? "animate-skills1" : "animate-skills2"
+			className={`skill-card shadow-md shadow-blue-400 h-[20rem] w-[20rem] p-2 rounded-full ${
+				idx && idx === 1
+					? "animate-skills2"
+					: Number(idx) % 2 === 0
+					? "animate-skills1"
+					: "animate-skills2"
 			}`}>
 			<div className={`skill-logo-container ${levelClass}`}>
 				<img
@@ -57,21 +62,21 @@ const SkillCard = (props: Props) => {
 			</div>
 			<h3 className="font-bold text-cyan-600 text-[1.8rem]">{skill.name}</h3>
 			<p className="font-bold text-blue-400 text-[1.4rem]">
-				Experience: {skill.experience} years
+				{skill.experience} years
 			</p>
 			{Token && (
 				<div className="flex items-center justify-between w-full">
 					<button
 						onClick={() => handleEdit(skill?._id)}
 						type="button"
-						className="bg-blue-500 text-white py-2 px-6 rounded-md">
-						Edit
+						className="bg-blue-500 text-white p-4 rounded-full">
+						<FaEdit />
 					</button>
 					<button
 						onClick={() => handleDelete(skill?._id)}
 						type="button"
-						className="bg-red-500 text-white py-2 px-6 rounded-md">
-						Delete
+						className="bg-red-500 text-white p-4 rounded-full">
+						<FaTrash />
 					</button>
 				</div>
 			)}
