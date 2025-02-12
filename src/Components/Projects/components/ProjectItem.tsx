@@ -32,7 +32,7 @@ const ProjectItem = (props: Props) => {
 
 	return (
 		<React.Fragment>
-			<div className="w-96 min-h-96 mb-5 bg-white rounded-lg shadow-lg flex flex-col items-center justify-center relative">
+			<div className="lg:w-96 lg:min-h-96 mb-5 bg-white rounded-lg shadow-lg flex flex-col items-center justify-center relative">
 				{UserDetails?.token && (
 					<div
 						onClick={() => {

@@ -18,7 +18,7 @@ const ReadProjects = () => {
 	}, [Projects?.projectsCountChanged]);
 	return (
 		<React.Fragment>
-			<div className="p-6 flex flex-wrap items-center justify-center space-x-8">
+			<div className="p-6 flex flex-wrap items-center justify-center space-y-8 lg:space-x-8">
 				{Projects?.projects ? (
 					Projects.projects.map((item: any, idx: number) => (
 						<ProjectItem key={idx} item={item} idx={idx} />

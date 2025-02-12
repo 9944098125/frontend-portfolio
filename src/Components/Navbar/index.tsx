@@ -42,7 +42,7 @@ const Navbar = () => {
 					/>
 					<h4 className="text-2xl font-bold text-white">Portfolio</h4>
 				</div>
-				<div className="flex items-center space-x-10 px-10">
+				<div className="hidden lg:flex items-center space-x-10 px-10">
 					<HashLink
 						scroll={(el) =>
 							el.scrollIntoView({ behavior: "auto", block: "end" })

@@ -9,8 +9,8 @@ const Details = ({ summary, image }: { summary: string; image: string }) => {
 			<Section>
 				<div className="flex flex-col gap-5 w-full">
 					{/* First Half - Half-width Section */}
-					<div className="flex items-center space-x-5">
-						<div className="w-1/2 text-blue-700 border-2 border-blue-500 p-5 rounded-md font-semibold text-[14px] font-cursive">
+					<div className="flex flex-col lg:flex-row items-center space-x-5">
+						<div className="lg:w-1/2 text-blue-700 border-2 mb-5 border-blue-500 p-5 rounded-md font-semibold text-[10px] lg:text-[14px] font-cursive">
 							{summary ? (
 								lines
 									.slice(0, Math.ceil(lines.length / 4))
@@ -26,7 +26,7 @@ const Details = ({ summary, image }: { summary: string; image: string }) => {
 									<img
 										src={image}
 										alt=""
-										className="w-[25rem] h-[25rem] rounded-full animate-pulse-image"
+										className="w-[15rem] h-[15rem] lg:w-[25rem] lg:h-[25rem] rounded-full animate-pulse-image"
 									/>
 								) : (
 									<Icons.Spinner className="text-blue-600 h-10 w-10 animate-spin" />
@@ -36,7 +36,7 @@ const Details = ({ summary, image }: { summary: string; image: string }) => {
 					</div>
 
 					{/* Second Half - Full-width Section */}
-					<div className="w-[90vw] z-[199] text-blue-700 border-2 border-blue-500 p-5 rounded-md font-semibold text-[16px] font-cursive">
+					<div className="lg:w-[90vw] z-[199] text-blue-700 border-2 border-blue-500 p-5 rounded-md font-semibold text-[12px] lg:text-[16px] font-cursive">
 						{summary ? (
 							<p>{lines.slice(Math.ceil(lines.length / 4)).join("\n")}</p>
 						) : (

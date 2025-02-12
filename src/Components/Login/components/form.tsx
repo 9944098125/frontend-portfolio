@@ -41,7 +41,7 @@ const LoginForm = () => {
 		<React.Fragment>
 			{/* this component contains a form to login */}
 			<div id="loginForm" className="p-5 w-full text-white font-semibold">
-				<h3 className="text-2xl text-blue-700 font-bold underline mb-5">
+				<h3 className="text-[12px] lg:text-2xl text-blue-700 font-bold underline mb-5">
 					Login & Edit Your Portfolio details if you are an admin.
 				</h3>
 				<form onSubmit={handleSubmit(submitLoginForm)}>

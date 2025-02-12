@@ -12,7 +12,7 @@ const AddResume = () => {
 
 	return (
 		<React.Fragment>
-			<div className="w-full min-h-screen">
+			<div className="w-full lg:min-h-screen">
 				{UserDetails?.user?.resume ? (
 					<DocViewer documents={docs} pluginRenderers={DocViewerRenderers} />
 				) : (

@@ -46,7 +46,7 @@ const SkillCard = (props: Props) => {
 
 	return (
 		<div
-			className={`skill-card shadow-md shadow-blue-400 h-[20rem] w-[20rem] p-2 rounded-full ${
+			className={`skill-card shadow-md shadow-blue-400 h-[15rem] w-[15rem] lg:h-[20rem] lg:w-[20rem] p-2 rounded-full ${
 				idx && idx === 1
 					? "animate-skills2"
 					: Number(idx) % 2 === 0

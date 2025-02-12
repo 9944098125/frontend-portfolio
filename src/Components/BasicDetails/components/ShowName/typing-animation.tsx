@@ -53,11 +53,12 @@ const TypingAnimation = (props: Props) => {
 
 	// Determine the color based on the message being typed
 	const textColor =
-		currentMessageIndex === 0 ? "text-red-500" : "text-cyan-500";
+		currentMessageIndex === 0 ? "text-pink-500" : "text-cyan-500";
 
 	return (
 		<React.Fragment>
-			<h1 className={`text-[2.5rem] typing-animation underline ${textColor}`}>
+			<h1
+				className={`text-[1.5rem] lg:text-[2.5rem] typing-animation underline ${textColor}`}>
 				{name && occupation ? (
 					text
 				) : (

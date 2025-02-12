@@ -6,12 +6,6 @@
 	animation: typing 1s steps(20), erasing 1s steps(20) 2s; /* Adjust the animation duration and steps */
 }
 
-@media screen and (max-width: 768px) {
-	.typing-animation {
-		font-size: 15px;
-	}
-}
-
 section {
 	box-sizing: border-box;
 	width: 100%;

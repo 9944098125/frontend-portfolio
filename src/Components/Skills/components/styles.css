@@ -24,6 +24,13 @@
 	object-fit: cover;
 }
 
+@media screen {
+	.skill-logo {
+		width: 70px;
+		height: 70px;
+	}
+}
+
 /* Partially filled borders */
 .skill-border-beginner::after,
 .skill-border-intermediate::after,

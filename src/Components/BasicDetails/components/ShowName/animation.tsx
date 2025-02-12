@@ -15,7 +15,7 @@ export default function Animation() {
 	});
 
 	return (
-		<div className="container">
+		<div className="hidden lg:container">
 			<div className="cube" ref={ref}>
 				<div className="side front" />
 				<div className="side left" />
