@@ -45,8 +45,8 @@ const Login: React.FC = () => {
 				<div
 					className={`bg-black p-10 ${
 						LoginDetails.token || localStorage.getItem("asp-portfolio-token")
-							? "hidden lg:w-full transition-all duration-1000"
-							: "hidden lg:w-1/2"
+							? "hidden lg:block w-full transition-all duration-1000"
+							: "hidden lg:block w-1/2"
 					}`}>
 					<div
 						className="rounded-lg p-10 mb-10 transition-colors duration-1000"

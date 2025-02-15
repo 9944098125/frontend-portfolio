@@ -9,10 +9,11 @@ import Resume from "./Components/Resume";
 import Skills from "./Components/Skills";
 import store from "./Redux/Store/Store";
 import { Toaster } from "react-hot-toast";
+import ContactIcons from "./Components/Contact";
 
 function App() {
 	return (
-		<div className="App">
+		<div className="">
 			<Provider store={store}>
 				<div className="pt-[5rem]">
 					<Navbar />
@@ -21,6 +22,7 @@ function App() {
 					<Projects />
 					<Skills />
 					<Experience />
+					<ContactIcons />
 					<Login />
 				</div>
 				<Toaster position="bottom-right" />

@@ -23,7 +23,7 @@ const Navbar = () => {
 
 	return (
 		<React.Fragment>
-			<nav className="w-full h-[70px] z-[199] bg-blue-800 shadow-lg fixed top-0 left-0 right-0 shadow-blue-100 flex items-center justify-between">
+			<nav className="w-full h-[70px] z-[199] bg-blue-600 shadow-lg fixed top-0 left-0 right-0 shadow-blue-100 flex items-center justify-between">
 				{LoginDetails.token && showConfirmationModal && (
 					<ConfirmationModal
 						showConfirmationModal={showConfirmationModal}
@@ -32,7 +32,7 @@ const Navbar = () => {
 					/>
 				)}
 				{/* logo-container */}
-				<div className="w-[100px] flex items-center space-x-5 px-5 cursor-pointer">
+				<div className="flex items-center space-x-5 px-5 cursor-pointer">
 					<img
 						src="/asp.png"
 						alt=""
@@ -40,7 +40,9 @@ const Navbar = () => {
 						width={50}
 						style={{ borderRadius: "50%" }}
 					/>
-					<h4 className="text-2xl font-bold text-white">Portfolio</h4>
+					<h4 className="text-2xl font-bold text-white">
+						{LoginDetails?.user?.name}
+					</h4>
 				</div>
 				<div className="hidden lg:flex items-center space-x-10 px-10">
 					<HashLink
@@ -78,6 +80,15 @@ const Navbar = () => {
 						to="#experience">
 						<p className="text-white font-bold">Experience</p>
 					</HashLink>
+					{!(LoginDetails?.token || Token) && (
+						<HashLink
+							scroll={(el) =>
+								el.scrollIntoView({ behavior: "auto", block: "end" })
+							}
+							to="#contact">
+							<p className="text-white font-bold">Contacts</p>
+						</HashLink>
+					)}
 					{(LoginDetails?.token || Token) && (
 						<button
 							onClick={() => setShowConfirmationModal(true)}

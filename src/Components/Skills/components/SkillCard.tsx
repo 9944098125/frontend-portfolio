@@ -50,10 +50,11 @@ const SkillCard = (props: Props) => {
 				idx && idx === 1
 					? "animate-skills2"
 					: Number(idx) % 2 === 0
-					? "animate-skills1"
-					: "animate-skills2"
+					? "animate-skills1 bg-white"
+					: "animate-skills2 bg-black"
 			}`}>
-			<div className={`skill-logo-container ${levelClass}`}>
+			<div
+				className={`skill-logo-container flex items-center justify-center ${levelClass}`}>
 				<img
 					src={skill.image}
 					alt={`${skill.name} logo`}
