@@ -10,7 +10,7 @@ const Resume = () => {
 
 	return (
 		<React.Fragment>
-			<div id="resume" className="lg:min-h-screen w-full p-5">
+			<div id="resume" className="w-full p-5">
 				<h1 className="text-2xl text-blue-600 font-bold underline mb-5">
 					Resume
 				</h1>

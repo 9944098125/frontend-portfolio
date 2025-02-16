@@ -46,7 +46,7 @@ const BasicDetails = () => {
 
 	return (
 		<React.Fragment>
-			<div id="home" className="min-h-screen w-full">
+			<div id="home" className="w-full">
 				{LoginDetails?.token || Token ? (
 					<React.Fragment>
 						<AddName

@@ -41,7 +41,7 @@ const Login: React.FC = () => {
 
 	return (
 		<React.Fragment>
-			<div className="w-full min-h-[40vh] flex">
+			<div className="w-full flex">
 				<div
 					className={`bg-black p-10 ${
 						LoginDetails.token || localStorage.getItem("asp-portfolio-token")
