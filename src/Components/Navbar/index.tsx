@@ -40,7 +40,7 @@ const Navbar = () => {
 						width={50}
 						style={{ borderRadius: "50%" }}
 					/>
-					<h4 className="text-2xl font-bold text-white">
+					<h4 className="text-[23px] lg:text-[36px] font-bold text-white">
 						{LoginDetails?.user?.name}
 					</h4>
 				</div>

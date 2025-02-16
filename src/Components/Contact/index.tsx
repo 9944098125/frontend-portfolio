@@ -13,7 +13,7 @@ const ContactIcons = () => {
 				<h1 className="text-2xl text-blue-600 font-bold underline mb-5">
 					Contacts:
 				</h1>
-				<div className="flex space-x-10 justify-center items-center mb-5 mt-5">
+				<div className="flex flex-col lg:flex-row space-y-5 lg:space-x-10 justify-center items-center mb-5 mt-5">
 					{/* Email Icon */}
 					<div className="flex flex-col items-center justify-center space-y-5 border border-blue-600 rounded-full w-[150px] h-[150px]">
 						<a
